@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "title": "Panel en Vivo",
+    "description": "Panel de métricas en tiempo real con actualización automática"
+  },
+  "dashboard": {
+    "title": "Panel en Vivo",
+    "subtitle": "Métricas en tiempo real con actualización automática",
+    "loading": "Cargando panel...",
+    "error": "Error al cargar datos",
+    "retry": "Reintentar",
+    "lastUpdated": "Última actualización: {time}",
+    "autoRefresh": "Se actualiza automáticamente cada 10 segundos"
+  },
+  "cards": {
+    "requestsMade": "Solicitudes Realizadas",
+    "tokensUsed": "Tokens Utilizados",
+    "activeConnections": "Conexiones Activas",
+    "live": "En Vivo"
+  },
+  "languages": {
+    "en": "English",
+    "ar": "العربية",
+    "es": "Español",
+    "label": "Idioma"
+  }
+}

@@ -1,3 +1,7 @@
+'use client';
+
+import { useTranslations, useLocale } from 'next-intl';
+
 interface CounterCardProps {
   title: string;
   value: number;
@@ -21,6 +25,8 @@ const colorClasses = {
 };
 
 export default function CounterCard({ title, value, icon, color }: CounterCardProps) {
+  const t = useTranslations('cards');
+  const locale = useLocale();
   const colors = colorClasses[color];
 
   return (
@@ -31,13 +37,13 @@ export default function CounterCard({ title, value, icon, color }: CounterCardPr
         <div>
           <p className="text-sm font-medium text-white/80">{title}</p>
           <p className="mt-2 text-4xl font-bold text-white transition-all duration-500">
-            {value.toLocaleString()}
+            {value.toLocaleString(locale)}
           </p>
         </div>
         <div className="text-4xl">{icon}</div>
       </div>
       <div className="mt-4 flex items-center text-sm text-white/70">
-        <span className="mr-1">Live</span>
+        <span className="me-1">{t('live')}</span>
         <span className="relative flex h-2 w-2">
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75"></span>
           <span className="relative inline-flex h-2 w-2 rounded-full bg-white"></span>

@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "title": "Live Dashboard",
+    "description": "Real-time metrics dashboard with auto-refresh"
+  },
+  "dashboard": {
+    "title": "Live Dashboard",
+    "subtitle": "Real-time metrics with auto-refresh",
+    "loading": "Loading dashboard...",
+    "error": "Error loading data",
+    "retry": "Retry",
+    "lastUpdated": "Last updated: {time}",
+    "autoRefresh": "Auto-refreshes every 10 seconds"
+  },
+  "cards": {
+    "requestsMade": "Requests Made",
+    "tokensUsed": "Tokens Used",
+    "activeConnections": "Active Connections",
+    "live": "Live"
+  },
+  "languages": {
+    "en": "English",
+    "ar": "العربية",
+    "es": "Español",
+    "label": "Language"
+  }
+}
