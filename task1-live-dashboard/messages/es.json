@@ -23,5 +23,30 @@
     "ar": "العربية",
     "es": "Español",
     "label": "Idioma"
+  },
+  "billing": {
+    "pageTitle": "Facturación Medida",
+    "pageSubtitle": "Rastrea el tiempo de sesión y genera el pago",
+    "title": "Sesión de Facturación",
+    "startSession": "Iniciar Sesión",
+    "endSession": "Finalizar Sesión",
+    "newSession": "Nueva Sesión",
+    "processing": "Procesando...",
+    "rate": "{rate}/segundo",
+    "minimumWarning": "El cargo mínimo es {minimum} (requiere {seconds} segundos)",
+    "paymentCreated": "Intención de Pago Creada",
+    "paymentId": "ID de Pago",
+    "amount": "Monto",
+    "status": "Estado",
+    "error": "Error",
+    "backToDashboard": "← Volver al Panel",
+    "payNow": "Pagar Ahora",
+    "redirecting": "Redirigiendo al pago...",
+    "paymentSuccess": "Pago Exitoso",
+    "thankYou": "¡Gracias por tu pago!",
+    "returnToDashboard": "Volver al Panel"
+  },
+  "navigation": {
+    "billing": "Facturación"
   }
 }

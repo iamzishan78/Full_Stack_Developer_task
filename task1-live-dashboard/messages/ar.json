@@ -23,5 +23,30 @@
     "ar": "العربية",
     "es": "Español",
     "label": "اللغة"
+  },
+  "billing": {
+    "pageTitle": "الفوترة المقاسة",
+    "pageSubtitle": "تتبع وقت الجلسة وإنشاء الدفع",
+    "title": "جلسة الفوترة",
+    "startSession": "بدء الجلسة",
+    "endSession": "إنهاء الجلسة",
+    "newSession": "جلسة جديدة",
+    "processing": "جارٍ المعالجة...",
+    "rate": "{rate}/ثانية",
+    "minimumWarning": "الحد الأدنى للرسوم هو {minimum} (يتطلب {seconds} ثانية)",
+    "paymentCreated": "تم إنشاء نية الدفع",
+    "paymentId": "معرف الدفع",
+    "amount": "المبلغ",
+    "status": "الحالة",
+    "error": "خطأ",
+    "backToDashboard": "→ العودة إلى لوحة التحكم",
+    "payNow": "ادفع الآن",
+    "redirecting": "جارٍ التحويل إلى الدفع...",
+    "paymentSuccess": "تم الدفع بنجاح",
+    "thankYou": "شكراً لك على الدفع!",
+    "returnToDashboard": "العودة إلى لوحة التحكم"
+  },
+  "navigation": {
+    "billing": "الفوترة"
   }
 }

@@ -2,10 +2,8 @@
 
 import { useLocale, useTranslations } from 'next-intl';
 import { useRouter, usePathname } from 'next/navigation';
-import { useTransition, useEffect } from 'react';
+import { useTransition } from 'react';
 import { routing, type Locale } from '@/i18n/routing';
-
-const LOCALE_STORAGE_KEY = 'preferred-locale';
 
 const localeFlags: Record<Locale, string> = {
   en: '🇺🇸',
@@ -20,48 +18,29 @@ export default function LanguageSwitcher() {
   const pathname = usePathname();
   const [isPending, startTransition] = useTransition();
 
-  // Check localStorage on mount and redirect if needed
-  useEffect(() => {
-    const storedLocale = localStorage.getItem(LOCALE_STORAGE_KEY);
-    if (
-      storedLocale &&
-      storedLocale !== locale &&
-      routing.locales.includes(storedLocale as Locale)
-    ) {
-      // Redirect to stored locale
-      const newPath = getLocalizedPath(pathname, storedLocale);
-      router.replace(newPath);
-    }
-  }, [locale, pathname, router]);
-
-  const getLocalizedPath = (currentPath: string, newLocale: string) => {
-    // Remove current locale prefix if present
-    const pathWithoutLocale = routing.locales.reduce((path, loc) => {
-      if (path.startsWith(`/${loc}/`)) {
-        return path.replace(`/${loc}`, '');
-      }
-      if (path === `/${loc}`) {
-        return '/';
-      }
-      return path;
-    }, currentPath);
-
-    // For default locale (en), don't add prefix (as-needed strategy)
-    if (newLocale === routing.defaultLocale) {
-      return pathWithoutLocale || '/';
-    }
-
-    return `/${newLocale}${pathWithoutLocale}`;
-  };
-
   const handleLocaleChange = (newLocale: string) => {
-    // Save to localStorage
-    localStorage.setItem(LOCALE_STORAGE_KEY, newLocale);
+    // Save preference to localStorage
+    localStorage.setItem('preferred-locale', newLocale);
 
-    // Navigate to new locale
+    // Remove current locale prefix if present
+    let pathWithoutLocale = pathname;
+    for (const loc of routing.locales) {
+      if (pathname.startsWith(`/${loc}/`)) {
+        pathWithoutLocale = pathname.slice(loc.length + 1);
+        break;
+      } else if (pathname === `/${loc}`) {
+        pathWithoutLocale = '/';
+        break;
+      }
+    }
+
+    // For default locale (en), no prefix needed
+    const newPath = newLocale === routing.defaultLocale
+      ? pathWithoutLocale
+      : `/${newLocale}${pathWithoutLocale}`;
+
     startTransition(() => {
-      const newPath = getLocalizedPath(pathname, newLocale);
-      router.replace(newPath);
+      router.push(newPath);
     });
   };
 

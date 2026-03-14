@@ -23,5 +23,30 @@
     "ar": "العربية",
     "es": "Español",
     "label": "Language"
+  },
+  "billing": {
+    "pageTitle": "Metered Billing",
+    "pageSubtitle": "Track session time and generate payment",
+    "title": "Billing Session",
+    "startSession": "Start Session",
+    "endSession": "End Session",
+    "newSession": "New Session",
+    "processing": "Processing...",
+    "rate": "{rate}/second",
+    "minimumWarning": "Minimum charge is {minimum} (requires {seconds} seconds)",
+    "paymentCreated": "Payment Intent Created",
+    "paymentId": "Payment ID",
+    "amount": "Amount",
+    "status": "Status",
+    "error": "Error",
+    "backToDashboard": "← Back to Dashboard",
+    "payNow": "Pay Now",
+    "redirecting": "Redirecting to checkout...",
+    "paymentSuccess": "Payment Successful",
+    "thankYou": "Thank you for your payment!",
+    "returnToDashboard": "Return to Dashboard"
+  },
+  "navigation": {
+    "billing": "Billing"
   }
 }
